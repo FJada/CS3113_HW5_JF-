@@ -166,7 +166,7 @@ void initialise()
 
     
     // Start at level X
-    switch_to_scene(g_levels[2]);
+    switch_to_scene(g_levels[0]);
     g_effects = new Effects(g_projection_matrix, g_view_matrix);
     g_effects->start(SHRINK, 2.5f);
 }
