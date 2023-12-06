@@ -304,9 +304,14 @@ void update()
     }
     
     //win
-    if(g_lives >= 1 && g_current_scene == g_levelC && g_current_scene->m_state.player->get_position().y < -10.0f && g_current_scene->m_state.player->get_position().x > 18.0f){
+    if(g_lives >= 1 && g_current_scene == g_levelC && g_current_scene->m_state.player->get_position().y < -10.0f && g_current_scene->m_state.player->get_position().x > 18.0f && g_enemy_lives == 0){
         switch_to_scene(g_win);
     }
+    if(g_lives >= 1 && g_current_scene == g_levelC && g_current_scene->m_state.player->get_position().y < -10.0f && g_current_scene->m_state.player->get_position().x > 18.0f && g_enemy_lives != 0){
+        g_lives -= 1;
+        switch_to_scene(g_current_scene);
+    }
+    
     
     // taking damage from eneny
     if(g_current_scene->m_state.damage){
